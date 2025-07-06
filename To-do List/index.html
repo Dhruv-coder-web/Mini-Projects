@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>✨ Minimal Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="main-panel">
+      <div class="header">
+        <h1>Task Manager</h1>
+        <p>Organize your day with simple, clean task management</p>
+      </div>
+      
+      <div class="input-section">
+        <div class="input-group">
+          <input type="text" id="taskInput" placeholder="Add a new task..." />
+          <button class="add-btn" onclick="addTask()">Add Task</button>
+        </div>
+        
+        <div class="filter-tabs">
+          <button class="filter-tab active" onclick="filterTasks('all')">All</button>
+          <button class="filter-tab" onclick="filterTasks('active')">Active</button>
+          <button class="filter-tab" onclick="filterTasks('completed')">Completed</button>
+        </div>
+      </div>
+      
+      <div class="tasks-list" id="tasksList"></div>
+    </div>
+
+    <div class="sidebar">
+      <h2>Overview</h2>
+      
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="totalTasks">0</div>
+          <div class="stat-label">Total</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="completedTasks">0</div>
+          <div class="stat-label">Completed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="activeTasks">0</div>
+          <div class="stat-label">Active</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="completionRate">0%</div>
+          <div class="stat-label">Rate</div>
+        </div>
+      </div>
+      
+      <div class="progress-section">
+        <div class="progress-circle">
+          <svg class="circular-chart" viewBox="0 0 36 36">
+            <path class="circle-bg"
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="circle-progress" id="circleProgress"
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          </svg>
+          <div class="progress-text">
+            <div class="progress-percentage" id="progressPercentage">0%</div>
+            <div class="progress-label">Complete</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
